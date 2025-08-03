@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        elite: ['"Courier Prime"', 'monospace'],
+        courier: ['"Courier Prime"', 'monospace'],
       },
       keyframes: {
         typing: {
@@ -29,7 +29,7 @@ export default {
         }
       },
       animation: {
-        typing: "typing 2s steps(20, end) forwards, blink .7s step-end"
+        typing: "typing 2s steps(20, end) forwards, blink .7s step-end infinite"
       }
     },
   },

@@ -18,10 +18,10 @@ const Header = ({ homeRef, contactRef, aboutMeRef, projectsRef }) => {
 
     return (
         <header className='top-0 left-0 flex shadow-sm fixed bg-[#f5f2f9] z-50 w-full items-center justify-center'>
-            <Button onClick={scrollToHome} sx={{ color: 'black', fontFamily: 'elite' }}>Início</Button>
-            <Button onClick={scrollToAboutMe} sx={{ color: 'black', fontFamily: 'elite' }}>Sobre mim</Button>
-            <Button onClick={scrollToProjects} sx={{ color: 'black', fontFamily: 'elite' }}>Projetos</Button>
-            <Button onClick={scrollToContact} sx={{ color: 'black', fontFamily: 'elite' }}>Contato</Button>
+            <Button onClick={scrollToHome} sx={{ color: 'black', fontFamily: 'monospace' }}>Início</Button>
+            <Button onClick={scrollToProjects} sx={{ color: 'black', fontFamily: 'monospace' }}>Habilidades</Button>
+            <Button onClick={scrollToProjects} sx={{ color: 'black', fontFamily: 'monospace' }}>Projetos</Button>
+            <Button onClick={scrollToContact} sx={{ color: 'black', fontFamily: 'monospace' }}>Contato</Button>
         </header>
     )
 }

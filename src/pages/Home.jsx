@@ -10,10 +10,10 @@ const Home = forwardRef((props, ref) => {
         <section ref={ref} className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#101016] relative">
             <div className="flex flex-col pt-8 md:mt-0 bg-[#101016] w-full md:w-2/3 h-[50vh] md:h-[100vh] justify-center items-center md:items-center">
                 <div className="flex flex-row md:justify-end gap-2 md:gap-0 items-center">
-                    <h2 className="text-[#F6F7EB] font-elite whitespace-nowrap md:p-4 text-2xl md:text-4xl font-light mr-2 md:mr-0">Olá, eu sou</h2>
-                    <h2 className="text-[#101016] p-2 bg-[#f5f2f9] font-elite whitespace-nowrap md:p-4 text-2xl md:text-5xl animate-typing overflow-hidden font-extrabold">VITÓRIA!</h2>
+                    <h2 className="text-[#F6F7EB] font-courier whitespace-nowrap md:p-4 text-2xl md:text-4xl font-light mr-2 md:mr-0">Olá, eu sou</h2>
+                    <h2 className="text-[#101016] p-2 bg-[#f5f2f9] font-courier whitespace-nowrap md:p-4 text-2xl md:text-5xl animate-typing overflow-hidden font-extrabold">VITÓRIA!</h2>
                 </div>
-                <h2 className="text-[#F6F7EB] text-md md:text-lg font-elite mt-2">Desenvolvedora Full Stack</h2>
+                <h2 className="text-[#F6F7EB] text-md md:text-lg font-courier mt-2">Desenvolvedora Full Stack</h2>
                 <span className="text-8xl text-[#262633] mt-12">{'</>'}</span>
             </div>
 
