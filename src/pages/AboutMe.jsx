@@ -21,11 +21,15 @@ const AboutMe = forwardRef((props, ref) => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-start mx-8 md:mx-0 md:w-2/3 gap-12 h-[80vh]">
- 
                 <div className="flex flex-col">
-                    <Typography sx={{ fontFamily: 'courier', textAlign: 'justify', fontWeight: 'bold' }}>Meu nome é Jeane Vitória, sou estudante de Bacharelado em Ciência da Computação pela Universidade Federal Rural de Pernambuco (UFRPE). </Typography>
-                    <Typography sx={{ fontFamily: 'courier', fontWeight: 'bold', textAlign: 'justify', mt: 2 }}>
-                        Tenho me dedicado ao desenvolvimento de aplicações web, por meio de projetos acadêmicos e pessoais. Estou em busca de uma oportunidade de estágio que me permita aplicar na prática os conhecimentos adquiridos em projetos reais.
+                    <Typography sx={{ fontFamily: 'courier', textAlign: 'justify', fontWeight: 'bold' }} >
+                        Meu nome é Jeane Vitória e atualmente sou estudante de Bacharelado em Ciência da Computação pela Universidade Federal Rural de Pernambuco (UFRPE).
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'courier', fontWeight: 'bold', textAlign: 'justify', mt: 2 }} >
+                        Tenho me dedicado ao desenvolvimento de aplicações web, explorando práticas modernas por meio de projetos acadêmicos e pessoais. Essas experiências têm contribuído para meu crescimento técnico e para o fortalecimento de habilidades como consumo de APIs, integração entre tecnologias e desenvolvimento full-stack.
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'courier', fontWeight: 'bold', textAlign: 'justify', mt: 2 }} >
+                        Estou em busca de uma oportunidade de estágio que me permita aplicar na prática os conhecimentos adquiridos, colaborar com projetos reais e evoluir profissionalmente.
                     </Typography>
                 </div>
             </div>
