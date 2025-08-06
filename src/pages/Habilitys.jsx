@@ -22,7 +22,8 @@ import {
     SiDjango,
     SiMysql,
     SiPostgresql,
-    SiMongodb
+    SiMongodb,
+    SiNestjs
 } from "react-icons/si";
 import { Card, Typography } from "@mui/material";
 
@@ -36,6 +37,7 @@ const Habilitys = forwardRef((props, ref) => {
         { title: "Tailwind", icon: <SiTailwindcss /> },
         { title: "SpringBoot", icon: <SiSpringboot /> },
         { title: "Node.JS", icon: <FaNodeJs /> },
+        { title: "NestJS", icon: <SiNestjs /> },
         { title: "Express", icon: <SiExpress /> },
         { title: "Git", icon: <FaGitAlt /> },
         { title: "GitHub", icon: <FaGithub /> },
@@ -44,7 +46,7 @@ const Habilitys = forwardRef((props, ref) => {
         { title: "Docker", icon: <FaDocker /> },
         { title: "MySQL", icon: <SiMysql /> },
         { title: "PostGRE", icon: <SiPostgresql /> },
-        { title: "MongoDB", icon: <SiMongodb /> },
+        { title: "MongoDB", icon: <SiMongodb /> }
     ];
 
     return (
