@@ -108,7 +108,7 @@ const projects = [
                         {selectedProject.contribution}
                     </h4>
                     {/* Botões */}
-                    <div className=" flex flex-row gap-6 w-full items-center justify-center pb-16 md:pb-0">
+                    <div className=" flex flex-row gap-6 w-full items-center justify-center pb-2 md:pb-0">
                         <a
                             href={selectedProject.github}
                             target="_blank"

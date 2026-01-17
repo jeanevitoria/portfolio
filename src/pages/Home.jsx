@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Home = forwardRef((props, ref) => {
+    const notify = () => toast('E-mail copiado');
 
     return (
         <div className="min-h-screen w-full bg-[#101016] relative overflow-hidden flex flex-col items-center justify-center">
-
+            <Toaster />
             {/* Background */}
             <DottedGlowBackground
                 className="absolute inset-0 z-0 pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-80 dark:opacity-100"
@@ -53,9 +55,11 @@ const Home = forwardRef((props, ref) => {
 
                             </a>
                             <a
-                                href="https://mail.google.com/mail/?view=cm&fs=1&to=jeanevitoria994@gmail.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="mailto:jeanevitoria994@gmail.com"
+                                onClick={(e) => {
+                                    navigator.clipboard.writeText("jeanevitoria994@gmail.com")
+                                    notify()
+                                }}
                                 className="flex items-center gap-2 border border-white text-white bg-transparent px-4 py-2 rounded hover:bg-white hover:text-[#101016] transition"
                                 title="jeanevitoria994@gmail.com"
                             >
