@@ -15,7 +15,7 @@ import { Button } from "@mui/material";
 
 const Projects = forwardRef((props, ref) => {
 
-const projects = [
+    const projects = [
         {
             title: 'À Margem',
             media: amargem,
@@ -88,7 +88,7 @@ const projects = [
                     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 100%);
                 }
                 
-                @media (min-width: 768px) {
+                @media (min-width: 1024px) {
                     .project-mask {
                         /* Desktop: Gradiente da esquerda (transparente) para direita (visível) */
                         mask-image: linear-gradient(to right, transparent 0%, black 100%);
@@ -98,7 +98,7 @@ const projects = [
             `}</style>
 
             {/* --- ÁREA DE TEXTO (Embaixo no mobile, Esquerda no Desktop) --- */}
-            <div className="relative w-full md:absolute md:top-0 md:left-0 md:h-screen text-white z-20 bg-[#101016] md:bg-transparent md:bg-gradient-to-r md:from-[#101016] md:via-[#00000099] md:to-transparent md:w-1/2">
+            <div className="relative w-full md:absolute md:top-0 md:left-0 md:h-screen text-white z-20 bg-[#101016] md:bg-transparent md:bg-gradient-to-r md:from-[#101016] md:via-[#00000099] md:to-transparent md:w-4/5 lg:w-1/2">
                 <div className="flex flex-col gap-6 px-6 md:pl-12 md:w-2/3 h-full items-center justify-center text-center md:text-left">
                     <h1 className="text-3xl md:text-4xl font-bold">{selectedProject.title}</h1>
                     <h4 className="text-sm md:text-base border-l-4 border-red-500 pl-4 text-justify md:text-left">
@@ -108,7 +108,7 @@ const projects = [
                         {selectedProject.contribution}
                     </h4>
                     {/* Botões */}
-                    <div className=" flex flex-row gap-6 w-full items-center justify-center pb-2 md:pb-0">
+                    <div className=" flex flex-row gap-6 w-full items-center justify-center md:pb-0">
                         <a
                             href={selectedProject.github}
                             target="_blank"
@@ -143,11 +143,11 @@ const projects = [
                 />
                 {/* Botões */}
 
-                {/* Botões */}
-                <div className="absolute bottom-0 md:bottom-10 right-0 flex h-auto flex-row gap-4 w-full items-center px-6 md:pl-12 justify-between md:justify-center pb-4 md:pb-0">
+                <div className="absolute bottom-0 md:bottom-10 right-0 flex h-auto flex-row gap-4 w-full md:w-2/5 lg:w-full items-center px-6 md:pl-12 justify-between md:justify-center pb-4 md:pb-0">
 
                     {/* Botão ANTERIOR */}
                     <Button
+                        size='small'
                         startIcon={<MdArrowBack size={18} />}
                         className="flex z-20 items-center gap-2 !px-4 !rounded-full !border !border-white/30 !bg-black/40 !text-neutral-100 hover:!bg-white hover:!text-[#0B0F1A] transition backdrop-blur-sm !normal-case"
                         onClick={() => {
@@ -169,6 +169,7 @@ const projects = [
                     {/* Botão PRÓXIMO */}
                     {projects.indexOf(selectedProject) < projects.length - 1 && (
                         <Button
+                            size='small'
                             endIcon={<MdArrowForward size={18} />}
                             className="flex items-center gap-2 !px-4 !rounded-full !border !border-white/20 !bg-black/40 !text-neutral-100 hover:!bg-white hover:!text-[#0B0F1A] transition backdrop-blur-sm !normal-case"
                             onClick={() => {
