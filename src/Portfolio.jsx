@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import Home from './pages/Home';
 import Header from './components/Header';
 import AboutMe from './pages/AboutMe';
-import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import Habilitys from './pages/Habilitys';
 import { FaArrowUp } from "react-icons/fa";
@@ -13,9 +12,9 @@ function Portfolio() {
   const aboutMeRef = useRef(null);
   const projectsRef = useRef(null);
   const habilitysRef = useRef(null);
-  const contactRef = useRef(null);
 
   const [showFab, setShowFab] = useState(false);
+  const [activeSection, setActiveSection] = useState('Home');
 
   const scrollToHome = () => {
     homeRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -26,10 +25,36 @@ function Portfolio() {
       const scrollY = window.scrollY;
       const homeHeight = homeRef.current?.offsetHeight || 0;
 
+      // Lógica do botão FAB
       if (scrollY > homeHeight - 100) {
         setShowFab(true);
       } else {
         setShowFab(false);
+      }
+
+      // Lista de seções mapeando ID -> Ref
+      const sections = [
+        { id: 'Home', ref: homeRef },
+        { id: 'AboutMe', ref: aboutMeRef },
+        { id: 'Habilitys', ref: habilitysRef },
+        { id: 'Projects', ref: projectsRef },
+      ];
+
+      const scrollPosition = scrollY + window.innerHeight / 3;
+
+      for (const section of sections) {
+        const element = section.ref.current;
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+
+          if (
+            scrollPosition >= offsetTop && 
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
       }
     };
 
@@ -39,7 +64,13 @@ function Portfolio() {
 
   return (
     <div className="w-full gap-0 bg-[#101016]">
-      <Header habilitysRef={habilitysRef} aboutMeRef={aboutMeRef} projectsRef={projectsRef} contactRef={contactRef} />
+      <Header 
+        activeSection={activeSection}
+        homeRef={homeRef}
+        habilitysRef={habilitysRef} 
+        aboutMeRef={aboutMeRef} 
+        projectsRef={projectsRef} 
+      />
 
       <Fab
         color="primary"
@@ -61,12 +92,11 @@ function Portfolio() {
         <FaArrowUp />
       </Fab>
 
-      <main className="gap-0 bg-[#101016]">
+      <main className="gap-0 bg-[#101016] flex flex-col">
         <Home ref={homeRef} />
         <AboutMe ref={aboutMeRef} />
         <Habilitys ref={habilitysRef} />
         <Projects ref={projectsRef} />
-        <Contact ref={contactRef} />
       </main>
     </div>
   );
