@@ -20,7 +20,7 @@ const Projects = forwardRef((props, ref) => {
             title: 'À Margem',
             media: amargem,
             description: 'Participei do desenvolvimento do site oficial do Coletivo À Margem, o primeiro grupo de teatro hip-hop de Pernambuco. O projeto teve como objetivo criar uma plataforma moderna, acessível e responsiva que refletisse a identidade visual e os valores sociais e culturais do grupo.',
-            contribution: <>Atuei no desenvolvimento Full Stack, com foco na arquitetura do Front-end utilizando <b className="text-yellow-300">Next.JS</b>. No Back-end, colaborei na construção do banco de dados com <b className="text-yellow-300">PRISMA</b> e <b className="text-yellow-300">PostgreSQL</b>.</>,
+            contribution: <>Atuei no desenvolvimento Full Stack, com foco na arquitetura do Front-end utilizando <b className="text-yellow-300">Next.JS</b>. No Back-end, colaborei na construção do banco de dados com <b className="text-yellow-300">Prisma</b> e <b className="text-yellow-300">PostgreSQL</b>.</>,
             github: 'https://github.com/ATMZSolutions/a-margem-front.git',
             site: 'https://www.amargem.com.br/'
         },
@@ -52,7 +52,7 @@ const Projects = forwardRef((props, ref) => {
             title: 'Cursos',
             media: cursos,
             description: 'Aplicação SaaS que permite a profissionais, educadores e empresas disponibilizarem seus próprios conteúdos educacionais de forma organizada.',
-            contribution: <>Construí uma plataforma robusta para gestão de conteúdo utilizando <b className="text-yellow-300">Nest.JS</b>. A infraestrutura foi containerizada com <b className="text-yellow-300">Docker</b> e a persistência de dados foi gerenciada via <b className="text-yellow-300">PostGRE</b> e <b className="text-yellow-300">JavaScript</b>.</>,
+            contribution: <>Construí uma plataforma robusta para gestão de conteúdo utilizando <b className="text-yellow-300">Nest.JS</b>. A infraestrutura foi containerizada com <b className="text-yellow-300">Docker</b> e a persistência de dados foi gerenciada via <b className="text-yellow-300">PostgreSQL</b> e <b className="text-yellow-300">JavaScript</b>.</>,
             github: 'https://github.com/Plataforma-de-Cursos-Web',
             site: ''
         },
@@ -68,7 +68,7 @@ const Projects = forwardRef((props, ref) => {
             title: 'CultBox',
             media: cultbox,
             description: 'Rede social voltada para eventos culturais, na qual os usuários e empresas podem anunciar a realização de eventos, bem como compartilhar suas experiências.',
-            contribution: <>Desenvolvimento Full Stack de uma rede social, utilizando <b className="text-yellow-300">DIJANGO</b> e <b className="text-yellow-300">PYTHON</b> no back-end em conjunto com <b className="text-yellow-300">TypeScript</b> no front-end. O banco de dados utilizado foi o <b className="text-yellow-300">PostGRE</b>.</>,
+            contribution: <>Desenvolvimento Full Stack de uma rede social, utilizando <b className="text-yellow-300">Django</b> e <b className="text-yellow-300">Python</b> no back-end em conjunto com <b className="text-yellow-300">TypeScript</b> no front-end. O banco de dados utilizado foi o <b className="text-yellow-300">PostGRE</b>.</>,
             github: 'https://github.com/Cult-Box',
             site: ''
         },
