@@ -74,8 +74,8 @@ const Projects = forwardRef((props, ref) => {
         },
     ]
 
-    const [selectedProject, setSelectedProject] = useState(projects[0])
     const [currentIndex, setCurrentIndex] = useState(0)
+    const selectedProject = projects[currentIndex]
 
     return (
         <section ref={ref} className="min-h-screen relative md:gap-16 pt-0 flex flex-col-reverse md:flex-row items-center justify-end bg-[#101016]">
@@ -143,19 +143,15 @@ const Projects = forwardRef((props, ref) => {
                 />
                 {/* Botões */}
 
-                <div className="absolute bottom-0 md:bottom-10 right-0 flex h-auto flex-row gap-4 w-full md:w-2/5 lg:w-full items-center px-6 md:pl-12 justify-between md:justify-center pb-4 md:pb-0">
+                <div className={`absolute bottom-0 md:bottom-10 right-0 flex h-auto flex-row gap-4 w-full md:w-2/5 lg:w-full items-center px-6 md:pl-12 ${currentIndex == 0 ? 'justify-end' : 'justify-between'} md:justify-center pb-4 md:pb-0`}>
 
                     {/* Botão ANTERIOR */}
-                    <Button
+                    {currentIndex > 0 && <Button
                         size='small'
                         startIcon={<MdArrowBack size={18} />}
                         className="flex z-20 items-center gap-2 !px-4 !rounded-full !border !border-white/30 !bg-black/40 !text-neutral-100 hover:!bg-white hover:!text-[#0B0F1A] transition backdrop-blur-sm !normal-case"
                         onClick={() => {
-                            const newIndex = currentIndex - 1;
-                            if (newIndex >= 0) {
-                                setSelectedProject(projects[newIndex]);
-                                setCurrentIndex(newIndex)
-                            }
+                            setCurrentIndex((prev) => Math.max(prev - 1, 0))
                         }}
                         disabled={currentIndex === 0}
                         sx={{
@@ -164,20 +160,18 @@ const Projects = forwardRef((props, ref) => {
                         }}
                     >
                         ANTERIOR
-                    </Button>
+                    </Button>}
 
                     {/* Botão PRÓXIMO */}
-                    {projects.indexOf(selectedProject) < projects.length - 1 && (
+                    {currentIndex < projects.length - 1 && (
                         <Button
                             size='small'
                             endIcon={<MdArrowForward size={18} />}
-                            className="flex items-center gap-2 !px-4 !rounded-full !border !border-white/20 !bg-black/40 !text-neutral-100 hover:!bg-white hover:!text-[#0B0F1A] transition backdrop-blur-sm !normal-case"
+                            className={`flex items-center gap-2 !px-4 !rounded-full !border !border-white/20 !bg-black/40 !text-neutral-100 hover:!bg-white hover:!text-[#0B0F1A] transition backdrop-blur-sm !normal-case`}
                             onClick={() => {
-                                const newIndex = currentIndex + 1
-                                if (newIndex < projects.length) {
-                                    setSelectedProject(projects[newIndex]);
-                                    setCurrentIndex(newIndex)
-                                }
+                                setCurrentIndex((prev) =>
+                                    Math.min(prev + 1, projects.length - 1)
+                                )
                             }}
                             sx={{
                                 minWidth: 0,
